@@ -45,6 +45,7 @@ CFLAGS="$RPM_OPT_FLAGS"
 %configure \
 	--prefix=/ \
 	--exec-prefix=/ \
+	--libdir=%{_libdir} \
 	--enable-gettext=no \
 	--disable-static \
 	--with-pic
@@ -59,6 +60,8 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 /usr/bin/make install DIST_MANIFEST="$DIST_INSTALL"
 /usr/bin/make install-dev DIST_MANIFEST="$DIST_INSTALL_DEV"
 /usr/bin/make install-lib DIST_MANIFEST="$DIST_INSTALL_LIB"
+
+rm -f %{buildroot}/%{_libdir}/*.{a,la}
 
 %post -n %lname -p /sbin/ldconfig
 
