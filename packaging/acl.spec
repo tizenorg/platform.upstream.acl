@@ -45,9 +45,6 @@ CFLAGS="$RPM_OPT_FLAGS"
 %configure \
 	--prefix=/ \
 	--exec-prefix=/ \
-	--sbindir=/bin \
-	--libdir=/%{_lib} \
-    	--libexecdir=/%{_lib} \
 	--enable-gettext=no \
 	--disable-static \
 	--with-pic
@@ -62,9 +59,6 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 /usr/bin/make install DIST_MANIFEST="$DIST_INSTALL"
 /usr/bin/make install-dev DIST_MANIFEST="$DIST_INSTALL_DEV"
 /usr/bin/make install-lib DIST_MANIFEST="$DIST_INSTALL_LIB"
-%{__mkdir_p} %{buildroot}%{_libdir}
-%{__ln_s} -v /%{_lib}/$(readlink %{buildroot}/%{_lib}/lib%{name}.so) %{buildroot}%{_libdir}/lib%{name}.so
-%{__rm} -v %{buildroot}/%{_lib}/lib%{name}.{la,so}
 
 %post -n %lname -p /sbin/ldconfig
 
@@ -94,5 +88,5 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 
 %files -n %lname
 %defattr(755,root,root,755)
-/%{_lib}/libacl.so.1*
+%{_libdir}/libacl.so.1*
 
