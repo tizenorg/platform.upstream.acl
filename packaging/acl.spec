@@ -46,6 +46,7 @@ CFLAGS="$RPM_OPT_FLAGS"
 	--prefix=/ \
 	--exec-prefix=/ \
 	--libdir=%{_libdir} \
+	--libexecdir=%{_libdir} \
 	--enable-gettext=no \
 	--disable-static \
 	--with-pic
