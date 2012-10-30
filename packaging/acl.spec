@@ -1,5 +1,6 @@
-Name:           acl
 %define lname	libacl
+
+Name:           acl
 BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
 License:        GPL-2.0+ ; LGPL-2.1+
