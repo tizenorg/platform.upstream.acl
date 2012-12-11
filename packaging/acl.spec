@@ -74,6 +74,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 
 %files 
 %defattr(-,root,root)
+%license doc/COPYING doc/COPYING.LGPL
 %attr(755,root,root) %{_bindir}/chacl
 %attr(755,root,root) %{_bindir}/getfacl
 %attr(755,root,root) %{_bindir}/setfacl
