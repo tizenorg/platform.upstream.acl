@@ -4,7 +4,7 @@ Name:           acl
 BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
 License:        GPL-2.0+ ; LGPL-2.1+
-Group:          System/Filesystems
+Group:          Security/Access Control
 Version:        2.2.51
 Release:        0
 Source:         %name-%version.src.tar.gz
@@ -17,7 +17,7 @@ control lists.
 
 %package -n %lname
 Summary:        A dynamic library for accessing POSIX Access Control Lists
-Group:          System/Libraries
+Group:          Security/Access Control
 
 %description -n %lname
 This package contains the libacl.so dynamic library which contains the
@@ -26,7 +26,7 @@ control lists.
 
 %package -n libacl-devel
 Summary:        Include Files and Libraries mandatory for Development
-Group:          Development/Libraries/C and C++
+Group:          Development/Libraries
 Requires:       %lname = %version
 Requires:       glibc-devel
 # the .so file references libattr.so.x, so require libattr-devel
