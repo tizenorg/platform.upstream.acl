@@ -1,7 +1,7 @@
 Name:           acl
 BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
-License:        GPL-2.0+ ; LGPL-2.1+
+License:        GPL-2.0+ and LGPL-2.1+
 Group:          Security/Access Control
 Version:        2.2.51
 Release:        0
