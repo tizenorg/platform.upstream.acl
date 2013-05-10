@@ -1,5 +1,3 @@
-%define lname	libacl
-
 Name:           acl
 BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
@@ -15,11 +13,11 @@ Url:            http://download.savannah.gnu.org/releases-noredirect/acl/
 getfacl and setfacl commands for retrieving and setting POSIX access
 control lists.
 
-%package -n %lname
+%package -n libacl
 Summary:        A dynamic library for accessing POSIX Access Control Lists
 Group:          Security/Access Control
 
-%description -n %lname
+%description -n libacl
 This package contains the libacl.so dynamic library which contains the
 POSIX 1003.1e draft standard 17 functions for manipulating access
 control lists.
@@ -27,7 +25,7 @@ control lists.
 %package -n libacl-devel
 Summary:        Include Files and Libraries mandatory for Development
 Group:          Development/Libraries
-Requires:       %lname = %version
+Requires:       libacl = %version
 Requires:       glibc-devel
 # the .so file references libattr.so.x, so require libattr-devel
 Requires:       libattr-devel
@@ -63,11 +61,13 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 /usr/bin/make install-dev DIST_MANIFEST="$DIST_INSTALL_DEV"
 /usr/bin/make install-lib DIST_MANIFEST="$DIST_INSTALL_LIB"
 
+rm -f %{buildroot}%{_datadir}/doc/packages/acl/CHANGES.gz
+rm -f %{buildroot}%{_datadir}/doc/packages/acl/COPYING*
 rm -f %{buildroot}/%{_libdir}/*.{a,la}
 
-%post -n %lname -p /sbin/ldconfig
+%post -n libacl -p /sbin/ldconfig
 
-%postun -n %lname -p /sbin/ldconfig
+%postun -n libacl -p /sbin/ldconfig
 
 
 %docs_package
@@ -78,12 +78,9 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %attr(755,root,root) %{_bindir}/chacl
 %attr(755,root,root) %{_bindir}/getfacl
 %attr(755,root,root) %{_bindir}/setfacl
-%dir %attr(755,root,root) /usr/share/doc/packages/acl
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/CHANGES.gz
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/COPYING
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/COPYING.LGPL
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/PORTING
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/README
+%dir %attr(755,root,root) %{_datadir}/doc/packages/acl
+%doc %attr(644,root,root) %{_datadir}/doc/packages/acl/PORTING
+%doc %attr(644,root,root) %{_datadir}/doc/packages/acl/README
 
 %files -n libacl-devel
 %defattr(-,root,root)
@@ -92,7 +89,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %attr(644,root,root) %{_includedir}/sys/acl.h
 %attr(755,root,root) %{_libdir}/libacl.so
 
-%files -n %lname
+%files -n libacl
 %defattr(755,root,root,755)
 %{_libdir}/libacl.so.1*
 
