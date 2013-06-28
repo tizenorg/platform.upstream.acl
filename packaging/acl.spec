@@ -9,6 +9,7 @@ Version:        2.2.51
 Release:        0
 Source:         %name-%version.src.tar.gz
 Source2:        baselibs.conf
+Source1001: 	acl.manifest
 Url:            http://download.savannah.gnu.org/releases-noredirect/acl/
 
 %description
@@ -38,6 +39,7 @@ to develop applications that require these.
 
 %prep
 %setup -q -n acl-%version
+cp %{SOURCE1001} .
 
 %build
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
@@ -73,6 +75,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %docs_package
 
 %files 
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license doc/COPYING doc/COPYING.LGPL
 %attr(755,root,root) %{_bindir}/chacl
@@ -86,6 +89,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %doc %attr(644,root,root) /usr/share/doc/packages/acl/README
 
 %files -n libacl-devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %dir %attr(755,root,root) %{_includedir}/acl
 %attr(644,root,root) %{_includedir}/acl/libacl.h
@@ -93,6 +97,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %attr(755,root,root) %{_libdir}/libacl.so
 
 %files -n %lname
+%manifest %{name}.manifest
 %defattr(755,root,root,755)
 %{_libdir}/libacl.so.1*
 
