@@ -3,7 +3,7 @@
 Name:           acl
 BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
-License:        GPL-2.0+ ; LGPL-2.1+
+License:        GPL-2.0+ and LGPL-2.1+
 Group:          Security/Access Control
 Version:        2.2.51
 Release:        0
@@ -65,6 +65,8 @@ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
 /usr/bin/make install-dev DIST_MANIFEST="$DIST_INSTALL_DEV"
 /usr/bin/make install-lib DIST_MANIFEST="$DIST_INSTALL_LIB"
 
+rm %{buildroot}%{_defaultdocdir}/%{name}/COPYING*
+
 rm -f %{buildroot}/%{_libdir}/*.{a,la}
 
 %post -n %lname -p /sbin/ldconfig
@@ -83,8 +85,6 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %attr(755,root,root) %{_bindir}/setfacl
 %dir %attr(755,root,root) /usr/share/doc/packages/acl
 %doc %attr(644,root,root) /usr/share/doc/packages/acl/CHANGES.gz
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/COPYING
-%doc %attr(644,root,root) /usr/share/doc/packages/acl/COPYING.LGPL
 %doc %attr(644,root,root) /usr/share/doc/packages/acl/PORTING
 %doc %attr(644,root,root) /usr/share/doc/packages/acl/README
 
