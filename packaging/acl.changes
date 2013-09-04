@@ -1,3 +1,8 @@
+* Wed Sep 04 2013 Anas Nashif <anas.nashif@intel.com> accepted/tizen/20130710.221130@d0811ae
+- fixed license tag
+- resetting manifest requested domain to floor
+- Update package groups
+
 * Mon Mar 18 2013 Anas Nashif <anas.nashif@intel.com> upstream/2.2.51@f60be9e
 - Update package groups
 
