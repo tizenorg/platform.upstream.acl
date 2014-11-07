@@ -5,7 +5,7 @@ BuildRequires:  libattr-devel
 Summary:        Commands for Manipulating POSIX Access Control Lists
 License:        GPL-2.0+ and LGPL-2.1+
 Group:          Security/Access Control
-Version:        2.2.51
+Version:        2.2.52
 Release:        0
 Source:         %name-%version.src.tar.gz
 Source2:        baselibs.conf
