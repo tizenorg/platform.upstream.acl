@@ -156,7 +156,7 @@ chmod_only:
 /* Copy the permissions of src_path to dst_path. This includes the
    file mode permission bits and ACLs. File ownership is not copied.
  */
-int
+__attribute__((visibility("default"))) int
 perm_copy_file (const char *src_path, const char *dst_path,
 		 struct error_context *ctx)
 {

@@ -23,7 +23,7 @@
 
 
 /* 23.4.23 */
-int
+__attribute__((visibility("default"))) int
 acl_set_permset(acl_entry_t entry_d, acl_permset_t permset_d)
 {
 	acl_entry_obj *entry_obj_p = ext2int(acl_entry, entry_d);

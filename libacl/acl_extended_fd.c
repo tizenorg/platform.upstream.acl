@@ -27,7 +27,7 @@
 #include "acl_ea.h"
 
 
-int
+__attribute__((visibility("default"))) int
 acl_extended_fd(int fd)
 {
 	int base_size = sizeof(acl_ea_header) + 3 * sizeof(acl_ea_entry);

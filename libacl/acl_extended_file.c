@@ -26,7 +26,7 @@
 #include "__acl_extended_file.h"
 
 
-int
+__attribute__((visibility("default"))) int
 acl_extended_file(const char *path_p)
 {
 	return __acl_extended_file(path_p, getxattr);

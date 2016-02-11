@@ -23,7 +23,7 @@
 
 
 /* 23.4.1 */
-int
+__attribute__((visibility("default"))) int
 acl_add_perm(acl_permset_t permset_d, acl_perm_t perm)
 {
 	acl_permset_obj *acl_permset_obj_p = ext2int(acl_permset, permset_d);

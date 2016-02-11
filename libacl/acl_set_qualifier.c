@@ -23,7 +23,7 @@
 
 
 /* 23.4.24 */
-int
+__attribute__((visibility("default"))) int
 acl_set_qualifier(acl_entry_t entry_d, const void *tag_qualifier_p)
 {
 	acl_entry_obj *entry_obj_p = ext2int(acl_entry, entry_d);

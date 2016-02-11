@@ -40,7 +40,7 @@ static int parse_acl_entry(const char **text_p, acl_t *acl_p);
 
 
 /* 23.4.13 */
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_from_text(const char *buf_p)
 {
 	acl_t acl;

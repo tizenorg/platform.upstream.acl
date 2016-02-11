@@ -23,7 +23,7 @@
 
 
 /* 23.4.11 */
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_dup(acl_t acl)
 {
 	acl_entry_obj *entry_obj_p, *dup_entry_obj_p;

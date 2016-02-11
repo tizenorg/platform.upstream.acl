@@ -23,7 +23,7 @@
 
 
 /* 23.4.6 */
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_copy_int(const void *buf_p)
 {
 	const struct __acl *ext_acl = (struct __acl *)buf_p;

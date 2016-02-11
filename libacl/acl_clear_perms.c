@@ -23,7 +23,7 @@
 
 
 /* 23.4.3 */
-int
+__attribute__((visibility("default"))) int
 acl_clear_perms(acl_permset_t permset_d)
 {
 	acl_permset_obj *acl_permset_obj_p = ext2int(acl_permset, permset_d);

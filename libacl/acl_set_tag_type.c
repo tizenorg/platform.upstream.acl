@@ -23,7 +23,7 @@
 
 
 /* 23.4.25 */
-int
+__attribute__((visibility("default"))) int
 acl_set_tag_type(acl_entry_t entry_d, acl_tag_t tag_type)
 {
 	acl_entry_obj *entry_obj_p = ext2int(acl_entry, entry_d);

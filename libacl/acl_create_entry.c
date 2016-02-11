@@ -50,7 +50,7 @@ __acl_create_entry_obj(acl_obj *acl_obj_p)
 }
 
 /* 23.4.7 */
-int
+__attribute__((visibility("default"))) int
 acl_create_entry(acl_t *acl_p, acl_entry_t *entry_p)
 {
 	acl_obj *acl_obj_p;

@@ -23,7 +23,7 @@
 
 
 /* 23.4.4 */
-int
+__attribute__((visibility("default"))) int
 acl_copy_entry(acl_entry_t dest_d, acl_entry_t src_d)
 {
 	acl_entry_obj *dest_p = ext2int(acl_entry, dest_d),

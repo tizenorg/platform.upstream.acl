@@ -25,7 +25,7 @@
 
 
 /* 23.4.28 */
-int
+__attribute__((visibility("default"))) int
 acl_valid(acl_t acl)
 {
 	int result;

@@ -23,7 +23,7 @@
 
 
 /* 23.4.2 */
-int
+__attribute__((visibility("default"))) int
 acl_calc_mask(acl_t *acl_p)
 {
 	acl_obj *acl_obj_p;

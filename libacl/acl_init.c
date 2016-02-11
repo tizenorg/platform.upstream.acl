@@ -55,7 +55,7 @@ __acl_init_obj(int count)
 
 
 /* 23.4.20 */
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_init(int count)
 {
 	acl_obj *obj;

@@ -40,7 +40,7 @@
   	0 on success, -1 on error, or an ACL_*_ERROR value for invalid ACLs.
 */
 
-int
+__attribute__((visibility("default"))) int
 acl_check(acl_t acl, int *last)
 {
 	acl_obj *acl_obj_p = ext2int(acl, acl);

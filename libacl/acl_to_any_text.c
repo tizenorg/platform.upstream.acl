@@ -27,7 +27,7 @@
 #include <acl/libacl.h>
 #include "libacl.h"
 
-char *
+__attribute__((visibility("default"))) char *
 acl_to_any_text(acl_t acl, const char *prefix, char separator, int options)
 {
 	return __acl_to_any_text(acl, NULL, prefix, separator, NULL, options);

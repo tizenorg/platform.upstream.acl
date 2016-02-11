@@ -22,7 +22,7 @@
 #include "libacl.h"
 
 
-int
+__attribute__((visibility("default"))) int
 acl_cmp(acl_t acl1, acl_t acl2)
 {
 	acl_obj *acl1_obj_p = ext2int(acl, acl1),

@@ -26,7 +26,7 @@
 #include "config.h"
 
 
-const char *
+__attribute__((visibility("default"))) const char *
 acl_error(int code)
 {
 	switch(code) {

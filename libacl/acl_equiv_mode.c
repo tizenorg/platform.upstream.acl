@@ -26,7 +26,7 @@
 #include "libacl.h"
 
 
-int
+__attribute__((visibility("default"))) int
 acl_equiv_mode(acl_t acl, mode_t *mode_p)
 {
 	acl_obj *acl_obj_p = ext2int(acl, acl);

@@ -34,7 +34,7 @@
   	the new ACL.
 */
 
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_from_mode(mode_t mode)
 {
 	acl_obj *acl_obj_p;

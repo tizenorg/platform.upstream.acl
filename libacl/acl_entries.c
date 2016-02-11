@@ -22,7 +22,7 @@
 #include "libacl.h"
 
 
-int
+__attribute__((visibility("default"))) int
 acl_entries(acl_t acl)
 {
 	acl_obj *acl_obj_p = ext2int(acl, acl);

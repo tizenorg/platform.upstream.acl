@@ -24,7 +24,7 @@
 #include <acl/libacl.h>
 #include "libacl.h"
 
-char *
+__attribute__((visibility("default"))) char *
 acl_to_text(acl_t acl, ssize_t *len_p)
 {
 	return __acl_to_any_text(acl, len_p, NULL, '\n', "\n",

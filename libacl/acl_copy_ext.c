@@ -23,7 +23,7 @@
 
 
 /* 23.4.5 */
-ssize_t
+__attribute__((visibility("default"))) ssize_t
 acl_copy_ext(void *buf_p, acl_t acl, ssize_t size)
 {
 	struct __acl *acl_ext = (struct __acl *)buf_p;

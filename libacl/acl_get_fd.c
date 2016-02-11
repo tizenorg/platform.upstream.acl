@@ -33,7 +33,7 @@
 
 
 /* 23.4.15 */
-acl_t
+__attribute__((visibility("default"))) acl_t
 acl_get_fd(int fd)
 {
 	const size_t size_guess = acl_ea_size(16);

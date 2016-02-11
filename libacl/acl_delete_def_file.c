@@ -27,7 +27,7 @@
 
 
 /* 23.4.8 */
-int
+__attribute__((visibility("default"))) int
 acl_delete_def_file(const char *path_p)
 {
 	int error;
