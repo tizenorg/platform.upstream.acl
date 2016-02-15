@@ -21,7 +21,6 @@
 */
 
 #include <sys/stat.h>
-#include <acl/libacl.h>
 #include "libacl.h"
 
 #if defined(HAVE_ACL_ENTRIES) && \

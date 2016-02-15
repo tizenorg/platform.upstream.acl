@@ -17,6 +17,7 @@
 
 #include <errno.h>
 #include <sys/acl.h>
+#include <acl/libacl.h>
 #include "libobj.h"
 
 typedef unsigned int permset_t;

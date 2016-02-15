@@ -21,7 +21,6 @@
 
 #include <stdio.h>
 #include <errno.h>
-#include <acl/libacl.h>
 #include "libacl.h"
 
 
