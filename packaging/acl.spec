@@ -44,7 +44,7 @@ cp %{SOURCE1001} .
 %build
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
 export DEBUG=-DNDEBUG
-CFLAGS="$RPM_OPT_FLAGS"
+CFLAGS="$RPM_OPT_FLAGS -fvisibility=hidden"
 %configure \
 	--prefix=/ \
 	--exec-prefix=/ \
