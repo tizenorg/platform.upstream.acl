@@ -45,6 +45,7 @@ cp %{SOURCE1001} .
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
 export DEBUG=-DNDEBUG
 CFLAGS="$RPM_OPT_FLAGS"
+CFLAGS+=" -flto"
 %configure \
 	--prefix=/ \
 	--exec-prefix=/ \
