@@ -52,7 +52,7 @@ CFLAGS="$RPM_OPT_FLAGS"
 	--libexecdir=%{_libdir} \
 	--enable-gettext=no \
 	--disable-static \
-	--with-pic
+	--with-pic || cat config.log
 %{__make} %{?_smp_mflags}
 
 %install
@@ -76,7 +76,7 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 
 %docs_package
 
-%files 
+%files
 %manifest %{name}.manifest
 %defattr(-,root,root)
 %license doc/COPYING doc/COPYING.LGPL
@@ -100,4 +100,3 @@ rm -f %{buildroot}/%{_libdir}/*.{a,la}
 %manifest %{name}.manifest
 %defattr(755,root,root,755)
 %{_libdir}/libacl.so.1*
-
