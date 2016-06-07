@@ -42,6 +42,8 @@ to develop applications that require these.
 cp %{SOURCE1001} .
 
 %build
+cat /proc/cpuinfo
+
 export OPTIMIZER="$RPM_OPT_FLAGS -fPIC"
 export DEBUG=-DNDEBUG
 CFLAGS="$RPM_OPT_FLAGS"
