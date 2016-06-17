@@ -53,7 +53,11 @@ CFLAGS="$RPM_OPT_FLAGS"
 	--enable-gettext=no \
 	--disable-static \
 	--with-pic
+%ifarch aarch64
+%{__make}
+%else
 %{__make} %{?_smp_mflags}
+%endif
 
 %install
 DIST_ROOT="$RPM_BUILD_ROOT"
