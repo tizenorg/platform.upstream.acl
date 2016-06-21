@@ -53,7 +53,7 @@ CFLAGS="$RPM_OPT_FLAGS"
 	--enable-gettext=no \
 	--disable-static \
 	--with-pic
-%{__make} %{?_smp_mflags}
+%{__make} %{?_smp_mflags} --output-sync=recurse
 
 %install
 DIST_ROOT="$RPM_BUILD_ROOT"
